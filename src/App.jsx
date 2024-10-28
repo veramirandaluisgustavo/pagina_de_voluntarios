@@ -7,6 +7,7 @@ import { Navigate,Route,Routes } from 'react-router-dom'
 import Inicio from './pages/Inicio/Inicio'
 import Login from './pages/Login/Login'
 import Pasos from './pages/6Pasos/Pasos'
+import Footer from './components/Footer'
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
 
         </Routes>
+      <Footer></Footer>
     </>
   )
 }

@@ -1,7 +1,14 @@
+import Colabora from "./components/Colabora";
+import Eventos from "./components/Eventos";
+import VolunteerSection from "./components/VolunteerSection";
+
 function Inicio() {
     return ( 
         <>
-        <h1>Pagina de inicio</h1>
+        <VolunteerSection></VolunteerSection>
+        <Colabora></Colabora>
+        <Eventos></Eventos>
+
         </>
      );
 }
