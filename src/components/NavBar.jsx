@@ -30,7 +30,7 @@ const products = [
   { name: 'COLABORAR CON UNA ONG', description: 'Colabora con una ong', href: '/colaborar', icon: CursorArrowRaysIcon },
   { name: 'TIPOS DE VOLUNTARIADO', description: 'Que tipos de voluntariado tenemos?', href: '/tiposVoluntariado', icon: FingerPrintIcon },
   { name: 'PREGUNTAS FRECUENTES', description: 'Respuestas a las preguntas mas comunes', href: '/preguntas', icon: SquaresPlusIcon },
- 
+
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
@@ -118,8 +118,13 @@ export default function NavBar() {
           <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Contacta
           </Link>
+
           <Link to={"/foro"} className="text-sm font-semibold leading-6 text-gray-900">
             Comparte en el foro
+          </Link>
+          <Link to={"/recursos"} className="text-sm font-semibold leading-6 text-gray-900">
+            Recursos
+
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
