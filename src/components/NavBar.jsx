@@ -118,6 +118,9 @@ export default function NavBar() {
           <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Contacta
           </Link>
+          <Link to={"/foro"} className="text-sm font-semibold leading-6 text-gray-900">
+            Comparte en el foro
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link to={"/login"} className="text-sm font-semibold leading-6 text-gray-900">
