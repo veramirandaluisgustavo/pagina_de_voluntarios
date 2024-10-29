@@ -8,6 +8,7 @@ import Inicio from './pages/Inicio/Inicio'
 import Login from './pages/Login/Login'
 import Pasos from './pages/6Pasos/Pasos'
 import Footer from './components/Footer'
+import Recursos from './pages/Recursos/Recursos'
 function App() {
 
 
@@ -19,7 +20,7 @@ function App() {
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/pasos' element={<Pasos></Pasos>}></Route>
           <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
-
+          <Route path='/recursos' element={<Recursos></Recursos>}></Route>
         </Routes>
       <Footer></Footer>
     </>
