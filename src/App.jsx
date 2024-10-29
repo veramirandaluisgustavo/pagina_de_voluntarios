@@ -10,6 +10,7 @@ import Pasos from './pages/6Pasos/Pasos'
 import Footer from './components/Footer'
 import Foro from './pages/Foro/Foro'
 import Recursos from './pages/Recursos/Recursos'
+import Tipos from './pages/Tipos/Tipos'
 function App() {
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/foro' element={<Foro></Foro>}></Route>
           <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
           <Route path='/recursos' element={<Recursos></Recursos>}></Route>
+          <Route path='/tipos' element={<Tipos></Tipos>}></Route>
         </Routes>
       <Footer></Footer>
     </>

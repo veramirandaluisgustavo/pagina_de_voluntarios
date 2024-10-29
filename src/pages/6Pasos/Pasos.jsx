@@ -3,7 +3,7 @@ function Pasos() {
         <div className="min-h-screen flex flex-col">
             <section className="flex justify-center items-center bg-white text-purple-700 min-h-[500px]">
                 <div className="flex flex-col items-center max-w-3xl space-y-10">
-                    <h1 className="text-6xl  font-bold text-center" >6 PASOS PARA SER VOLUNTARIO/A</h1> 
+                    <h1 className="text-6xl  font-bold text-center" >6 PASOS PARA SER VOLUNTARIO/A</h1>
                 </div>
             </section>
 
@@ -41,9 +41,13 @@ function Pasos() {
                         <p className="mt-2 ">
                             Esto es lo que quieres entender y resolver.
                         </p>
-                        <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700">
+                        <button
+                            className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700"
+                            onClick={() => window.location.href = '/tipos'}
+                        >
                             Descubre diferentes tipos de voluntariado
                         </button>
+
                     </div>
                     <img
                         src="/images/mira.png"
@@ -132,7 +136,7 @@ function Pasos() {
                         <h2 className="text-5xl font-bold">6. FORMATE</h2>
                         <p className="mt-2 text-2xl">
                             ¿Necesitas saber más?
-                           
+
                         </p>
                         <p className="mt-2">
 
