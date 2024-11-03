@@ -75,6 +75,7 @@ function Pasos() {
                             Toda depende de tu disponibilidad, tus capacidades y tus intereses.
                         </p>
                         <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700">
+                            
                             Descubre que hacen los otros voluntarios
                         </button>
                     </div>
@@ -121,7 +122,9 @@ function Pasos() {
 
                             Comprométete, entusiásmate, trabaja en el proyecto que has escogido y disfruta de la experiencia.
                         </p>
-                        <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700">
+                        <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700"
+                        onClick={() => window.location.href = '/foro'}
+                        >
                             Comparte tu experiencia
                         </button>
                     </div>
