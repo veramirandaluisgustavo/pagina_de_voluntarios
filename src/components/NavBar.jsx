@@ -110,7 +110,7 @@ export default function NavBar() {
           </Popover>
 
           <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Colavora con Una ONG
+            Colabora con Una ONG
           </Link>
           <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Eventos
