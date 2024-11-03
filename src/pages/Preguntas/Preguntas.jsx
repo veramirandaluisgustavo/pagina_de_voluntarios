@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQItem from './FAQItem'; // Importar el componente FAQItem
+import FAQItem from './FAQItem'; 
 
 function Preguntas() {
     const preguntas = [
@@ -195,20 +195,20 @@ function Preguntas() {
             <img
                 src="/images/preguntas.png"
                 alt="Descripción de la imagen"
-                className="w-screen h-auto mb-8" // 'w-screen' para que ocupe todo el ancho de la pantalla
+                className="w-screen h-auto mb-8" 
             />
             <div className="max-w-7xl mx-auto my-20">
                 <p className="mt-6 mb-6 text-4xl leading-relaxed">
                     En esta sección damos respuesta a las preguntas más frecuentes alrededor del voluntariado y del funcionamiento de esta plataforma web. Si tienes más dudas, puedes preguntar en el <a href="/foro" className="text-purple-600 font-bold">foro</a>.
                 </p>
 
-                <h2 className="text-7xl font-bold text-purple-700 mt-12 mb-12">Preguntas sobre Voluntariado</h2>
+                <h2 className="text-7xl font-bold text-purple-700 mt-12 mb-12 custom-font">Preguntas sobre Voluntariado</h2>
 
                 {preguntas.map((item, index) => (
                     <FAQItem key={index} question={item.pregunta} answer={item.respuesta} />
                 ))}
 
-                <h3 className="text-7xl font-bold text-purple-700 mt-12 mb-12">Preguntas sobre el portal web</h3>
+                <h2 className="text-7xl font-bold text-purple-700 mt-12 mb-12 custom-font">Preguntas sobre el portal web</h2>
                 {preguntasPortalWeb.map((item, index) => (
                 <FAQItem key={index + preguntas.length} question={item.pregunta} answer={item.respuesta} />
             ))}

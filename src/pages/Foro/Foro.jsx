@@ -78,7 +78,7 @@ function Foro() {
         <div className="p-8">
             <div className="container mx-auto max-w-[2000px] px-[68px]">
                 <div className="text-center mb-8">
-                    <h1 className="text-8xl font-bold text-purple-700 mb-2">Foro</h1>
+                <h1 className="text-8xl font-bold text-purple-700 mb-2 custom-font">Foro</h1>
                     <p className="text-3xl text-gray-700 mb-4">
                         ¡Contagia tu entusiasmo en el foro! La gran comunidad del voluntariado te está esperando.
                     </p>
