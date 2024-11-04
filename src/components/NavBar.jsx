@@ -109,14 +109,14 @@ export default function NavBar() {
             </PopoverPanel>
           </Popover>
 
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to={'/colabora'} className="text-sm font-semibold leading-6 text-gray-900">
             Colavora con Una ONG
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to={'/eventos'} className="text-sm font-semibold leading-6 text-gray-900">
             Eventos
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Contacta
+          <Link to={'/formate'} className="text-sm font-semibold leading-6 text-gray-900">
+            Formate
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
