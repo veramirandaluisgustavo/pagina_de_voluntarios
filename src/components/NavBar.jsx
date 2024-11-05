@@ -41,7 +41,7 @@ export default function NavBar() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex items-center justify-between p-6 lg:px-8 border-b-2 mb-10">
         <div className="flex lg:flex-1">
-          <img src='/img/Vector.svg' alt="Logo" />
+          <img src='/img/Vector1.svg' alt="Logo" />
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Voluntariado</span>
             <img alt="Voluntariado" src="/img/voluntariado.png" className="h-8 w-auto" />
@@ -52,7 +52,7 @@ export default function NavBar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 "
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -61,7 +61,7 @@ export default function NavBar() {
 
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-base font-semibold leading-6 text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
               Hazte Voluntario
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
             </PopoverButton>
@@ -105,7 +105,7 @@ export default function NavBar() {
           </Popover>
 
    
-          <Link to="/colabora" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/colabora" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Colabora con Una ONG
           </Link>
           
@@ -113,19 +113,19 @@ export default function NavBar() {
             Contacta
           </Link>:<></>):<></>}
           
-          <Link to="/formate" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/formate" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Formate
           </Link>
-          <Link to="/foro" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/foro" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Comparte en el foro
           </Link>
-          <Link to="/recursos" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/recursos" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Recursos
           </Link>
         </PopoverGroup>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        {user?<><p className='mr-[10px]'>hola,{user.nombre}</p><button onClick={logout} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'>Salir</button></>:<Link to="/login" className="text-base font-semibold leading-6 text-gray-900">
+        {user?<><p className='mr-[10px]'>hola,{user.nombre}</p><button onClick={logout} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'>Salir</button></>:<Link to="/login" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>}
         </div>
