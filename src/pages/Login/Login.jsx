@@ -3,8 +3,10 @@ import { collection,getDocs,query,where } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import { json } from 'react-router-dom';
 import { useAuth } from '../../utils/AuthContext';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const {login} = useAuth()
+    const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -25,6 +27,7 @@ const Login = () => {
             const user = JSON.stringify({...resp.docs[0].data(),id:resp.docs[0].id,type:'ong'})
             sessionStorage.setItem('user',user)
             login({...resp.docs[0].data(),id:resp.docs[0].id,type:'ong'})
+            navigate('/')
         }
         else{
             console.log("no se encontro la ong")
@@ -40,6 +43,7 @@ const Login = () => {
             const user  = JSON.stringify({...resp.docs[0].data(),id:resp.docs[0].id,type:'person'})
             sessionStorage.setItem('user',user)
             login({...resp.docs[0].data(),id:resp.docs[0].id,type:'person'})
+            navigate('/')
         }
         else{
             console.log("no se encontro la persona")
