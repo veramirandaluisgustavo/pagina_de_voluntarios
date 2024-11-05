@@ -73,7 +73,7 @@ function Tipos() {
 
             {tiposDeVoluntariado.map((tipo, index) => (
                 <div key={index} className=" mb-8">
-                    <h1 className="text-7xl font-bold text-purple-700 mt-20 custom-font">{tipo.titulo}</h1>
+                    <h1 className="text-7xl font-bold text-purple-800 mt-20 custom-font">{tipo.titulo}</h1>
                     <p className="mt-4 text-gray-700 text-3xl">
                         {tipo.descripcion}
                     </p>

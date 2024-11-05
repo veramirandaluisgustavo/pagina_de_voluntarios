@@ -33,8 +33,8 @@ const Eventos = () => {
   ];
 
   return (
-    <div className="p-6 bg-blue-50">
-      <h1 className="text-4xl font-bold text-center mb-8">Eventos</h1>
+    <div className="p-6 ">
+      <h1 className="text-8xl font-bold text-center mb-8 custom-font">Eventos</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event, index) => (
           <EventCard key={index} {...event} />

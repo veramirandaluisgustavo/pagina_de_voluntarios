@@ -18,7 +18,7 @@ const  Card = ({
   );
 
   return (
-    <div className="border rounded-lg p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div className="border rounded-lg p-6 bg-white shadow-xl hover:shadow-md transition-shadow">
       <div className="space-y-4">
         {/* Header */}
         <div className="space-y-2">

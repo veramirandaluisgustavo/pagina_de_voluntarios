@@ -12,7 +12,7 @@ const EventCard = ({
   shareText = "Compartelo:"
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-all">
+    <div className="bg-white rounded-lg shadow-2xl p-6 hover:shadow-md transition-all">
       {/* Title */}
       <h3 className="text-xl font-medium text-pink-600 mb-4">
         {title}
