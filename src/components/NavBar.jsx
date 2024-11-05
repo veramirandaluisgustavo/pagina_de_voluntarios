@@ -28,9 +28,9 @@ import { Link } from 'react-router-dom'
 const products = [
   { name: '6 PASOS PARA SER VOLUNTARIO', description: 'Los pasos necesarios para que puedas ser voluntario', href: '/pasos', icon: ChartPieIcon },
   { name: 'COLABORAR CON UNA ONG', description: 'Colabora con una ong', href: '/colaborar', icon: CursorArrowRaysIcon },
-  { name: 'TIPOS DE VOLUNTARIADO', description: 'Que tipos de voluntariado tenemos?', href: '/tiposVoluntariado', icon: FingerPrintIcon },
+  { name: 'TIPOS DE VOLUNTARIADO', description: 'Que tipos de voluntariado tenemos?', href: '/tipos', icon: FingerPrintIcon },
   { name: 'PREGUNTAS FRECUENTES', description: 'Respuestas a las preguntas mas comunes', href: '/preguntas', icon: SquaresPlusIcon },
- 
+
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
@@ -117,6 +117,14 @@ export default function NavBar() {
           </Link>
           <Link to={'/formate'} className="text-sm font-semibold leading-6 text-gray-900">
             Formate
+          </Link>
+
+          <Link to={"/foro"} className="text-sm font-semibold leading-6 text-gray-900">
+            Comparte en el foro
+          </Link>
+          <Link to={"/recursos"} className="text-sm font-semibold leading-6 text-gray-900">
+            Recursos
+
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">

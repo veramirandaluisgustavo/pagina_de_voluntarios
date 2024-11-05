@@ -8,6 +8,9 @@ import Inicio from './pages/Inicio/Inicio'
 import Login from './pages/Login/Login'
 import Pasos from './pages/6Pasos/Pasos'
 import Footer from './components/Footer'
+import Foro from './pages/Foro/Foro'
+import Recursos from './pages/Recursos/Recursos'
+import Tipos from './pages/Tipos/Tipos'
 import Formate from './pages/Formate/Formate'
 import Colabora from './pages/Colabora/colabora'
 import Formate2 from './pages/Formate/Formate2'
@@ -21,12 +24,14 @@ function App() {
           <Route path='/' element={<Inicio></Inicio>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/pasos' element={<Pasos></Pasos>}></Route>
+          <Route path='/foro' element={<Foro></Foro>}></Route>
           <Route path='/colabora' element={<Colabora></Colabora>}></Route>
           <Route path='/formate' element={<Formate2></Formate2>}></Route>
 
 
           <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
-
+          <Route path='/recursos' element={<Recursos></Recursos>}></Route>
+          <Route path='/tipos' element={<Tipos></Tipos>}></Route>
         </Routes>
       <Footer></Footer>
     </>
