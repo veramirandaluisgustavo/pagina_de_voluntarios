@@ -3,11 +3,11 @@
 export default function VolunteerSection() {
   return (
     <div>
-    <div className="bg-teal-100 p-8 h-[400px] flex items-center justify-center">
+    <div className="bg-purple-700 p-8 h-[400px] flex items-center justify-center">
       {/* Header Section */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Quieres ser voluntario/a</h1>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded shadow-md">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-8 custom-font">Quieres ser voluntario/a</h1>
+        <button className="bg-pink-600 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow-md">
           HAZTE VOLUNTARIO EN 6 PASOS
         </button>
       </div>
@@ -41,7 +41,7 @@ export default function VolunteerSection() {
             incidiendo en el cambio de nuestras realidades. Como voluntario soy agente de cambio
             social.
           </p>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded shadow-md">
+          <button className="bg-pink-600 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow-md">
             COMPARTE TU EXPERIENCIA
           </button>
         </div>
