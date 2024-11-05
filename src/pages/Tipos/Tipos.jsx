@@ -66,14 +66,14 @@ const tiposDeVoluntariado = [
 function Tipos() {
     return (
         <div className="bg-white p-8 space-y-12">
-            <div className="mt-16 text-center"> {/* Centraliza el texto y añade margen superior */}
-                <h1 className="text-7xl font-bold text-black mb-8">Tipos de voluntariado</h1>
+            <div className="mt-16 text-center"> 
+                <h1 className="text-7xl font-bold text-black mb-8 custom-font">Tipos de voluntariado</h1>
                 <p className="text-3xl text-gray-600">Hay muchas maneras de hacer voluntariado, tantas como necesidades existen en una sociedad. En la Ley española del voluntariado del 2015 se recogen hasta 10 ámbitos diferentes donde realizar la acción voluntaria, solidaria y altruista. Aquí encontrarás una descripción de estos 10 tipos de voluntariado para que puedas elegir el que más se corresponda con tus intereses y habilidades.</p>
             </div>
 
             {tiposDeVoluntariado.map((tipo, index) => (
                 <div key={index} className=" mb-8">
-                    <h1 className="text-7xl font-bold text-purple-700 mt-20">{tipo.titulo}</h1>
+                    <h1 className="text-7xl font-bold text-purple-700 mt-20 custom-font">{tipo.titulo}</h1>
                     <p className="mt-4 text-gray-700 text-3xl">
                         {tipo.descripcion}
                     </p>

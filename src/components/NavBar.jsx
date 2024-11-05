@@ -66,7 +66,7 @@ export default function NavBar() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-base font-semibold leading-6 text-gray-900">
               Hazte Voluntario
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
             </PopoverButton>
@@ -109,26 +109,31 @@ export default function NavBar() {
             </PopoverPanel>
           </Popover>
 
+          <Link href="#" className="text-base font-semibold leading-6 text-gray-900 ">
+            Colabora con Una ONG
           <Link to={'/colabora'} className="text-sm font-semibold leading-6 text-gray-900">
             Colavora con Una ONG
           </Link>
+          <Link href="#" className="text-base font-semibold leading-6 text-gray-900">
           <Link to={'/eventos'} className="text-sm font-semibold leading-6 text-gray-900">
             Eventos
           </Link>
+          <Link href="#" className="text-base font-semibold leading-6 text-gray-900">
+            Contacta
           <Link to={'/formate'} className="text-sm font-semibold leading-6 text-gray-900">
             Formate
           </Link>
 
-          <Link to={"/foro"} className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to={"/foro"} className="text-base font-semibold leading-6 text-gray-900">
             Comparte en el foro
           </Link>
-          <Link to={"/recursos"} className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to={"/recursos"} className="text-base font-semibold leading-6 text-gray-900">
             Recursos
 
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to={"/login"} className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to={"/login"} className="text-base font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
