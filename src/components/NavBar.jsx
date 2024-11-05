@@ -61,7 +61,7 @@ export default function NavBar() {
 
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
               Hazte Voluntario
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
             </PopoverButton>
@@ -105,7 +105,7 @@ export default function NavBar() {
           </Popover>
 
    
-          <Link to="/colabora" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+          <Link to="/colabora" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Colabora con Una ONG
           </Link>
           
@@ -113,19 +113,19 @@ export default function NavBar() {
             Contacta
           </Link>:<></>):<></>}
           
-          <Link to="/formate" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+          <Link to="/formate" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Formate
           </Link>
-          <Link to="/foro" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+          <Link to="/foro" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Comparte en el foro
           </Link>
-          <Link to="/recursos" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+          <Link to="/recursos" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Recursos
           </Link>
         </PopoverGroup>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        {user?<><p className='mr-[10px]'>hola,{user.nombre}</p><button onClick={logout} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'>Salir</button></>:<Link to="/login" className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+        {user?<><p className='mr-[10px]'>hola,{user.nombre}</p><button onClick={logout} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'>Salir</button></>:<Link to="/login" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>}
         </div>
