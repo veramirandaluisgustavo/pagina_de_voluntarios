@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Heart } from 'lucide-react';
 
 const Footer = () => {
@@ -64,10 +64,12 @@ const Footer = () => {
         </div>
 
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <button className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+          <button className="bg-pink-600 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow-md">
             Login
           </button>
-          <button className="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-orange-600 transition-colors">
+
+          <button className="bg-pink-600 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded shadow-md">
+
             Try it for free
           </button>
         </div>
