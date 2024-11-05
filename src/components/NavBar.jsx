@@ -19,10 +19,11 @@ import {
   SquaresPlusIcon,
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../utils/AuthContext';
 
 const products = [
   { name: '6 PASOS PARA SER VOLUNTARIO', description: 'Los pasos necesarios para que puedas ser voluntario', href: '/pasos', icon: ChartPieIcon },
-  { name: 'COLABORAR CON UNA ONG', description: 'Colabora con una ONG', href: '/colaborar', icon: CursorArrowRaysIcon },
+  { name: 'COLABORAR CON UNA ONG', description: 'Colabora con una ONG', href: '/colabora', icon: CursorArrowRaysIcon },
   { name: 'TIPOS DE VOLUNTARIADO', description: 'Qué tipos de voluntariado tenemos?', href: '/tipos', icon: FingerPrintIcon },
   { name: 'PREGUNTAS FRECUENTES', description: 'Respuestas a las preguntas más comunes', href: '/preguntas', icon: SquaresPlusIcon },
 ];
@@ -33,6 +34,7 @@ const callsToAction = [
 ];
 
 export default function NavBar() {
+  const {user,logout} = useAuth()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -106,12 +108,11 @@ export default function NavBar() {
           <Link to="/colabora" className="text-sm font-semibold leading-6 text-gray-900">
             Colabora con Una ONG
           </Link>
-          <Link to="/eventos" className="text-sm font-semibold leading-6 text-gray-900">
-            Eventos
-          </Link>
-          <Link to="/contacta" className="text-sm font-semibold leading-6 text-gray-900">
+          
+          {user? (user.type=='ong'?<Link to="/contacta" className="text-sm font-semibold leading-6 text-gray-900">
             Contacta
-          </Link>
+          </Link>:<></>):<></>}
+          
           <Link to="/formate" className="text-sm font-semibold leading-6 text-gray-900">
             Formate
           </Link>
@@ -124,9 +125,9 @@ export default function NavBar() {
         </PopoverGroup>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/login" className="text-base font-semibold leading-6 text-gray-900">
+        {user?<><p className='mr-[10px]'>hola,{user.nombre}</p><button onClick={logout} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'>Salir</button></>:<Link to="/login" className="text-base font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          </Link>}
         </div>
       </nav>
     </header>

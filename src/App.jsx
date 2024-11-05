@@ -15,6 +15,7 @@ import Preguntas from './pages/Preguntas/Preguntas'
 import Formate from './pages/Formate/Formate'
 import Colabora from './pages/Colabora/colabora'
 import Formate2 from './pages/Formate/Formate2'
+import Contacta from './pages/Contacta/Contacta'
 function App() {
 
 
@@ -28,12 +29,13 @@ function App() {
           <Route path='/foro' element={<Foro></Foro>}></Route>
           <Route path='/colabora' element={<Colabora></Colabora>}></Route>
           <Route path='/formate' element={<Formate2></Formate2>}></Route>
+          <Route path='/contacta' element={<Contacta></Contacta>}></Route>
 
-
-          <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
+          
           <Route path='/recursos' element={<Recursos></Recursos>}></Route>
           <Route path='/tipos' element={<Tipos></Tipos>}></Route>
           <Route path='/preguntas' element={<Preguntas></Preguntas>}></Route>
+          <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
       <Footer></Footer>
     </>
