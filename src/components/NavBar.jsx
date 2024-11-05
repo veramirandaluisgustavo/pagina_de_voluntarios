@@ -1,59 +1,51 @@
 'use client'
 
-import { useState } from 'react'
-import styles from "./NavBar.module.css"
+import { useState } from 'react';
+import styles from "./NavBar.module.css";
 import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-} from '@headlessui/react'
+} from '@headlessui/react';
 import {
-  ArrowPathIcon,
   Bars3Icon,
+  ChevronDownIcon,
+  PhoneIcon,
+  PlayCircleIcon,
   ChartPieIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
   SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import { Link } from 'react-router-dom'
+} from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const products = [
   { name: '6 PASOS PARA SER VOLUNTARIO', description: 'Los pasos necesarios para que puedas ser voluntario', href: '/pasos', icon: ChartPieIcon },
-  { name: 'COLABORAR CON UNA ONG', description: 'Colabora con una ong', href: '/colaborar', icon: CursorArrowRaysIcon },
-  { name: 'TIPOS DE VOLUNTARIADO', description: 'Que tipos de voluntariado tenemos?', href: '/tipos', icon: FingerPrintIcon },
-  { name: 'PREGUNTAS FRECUENTES', description: 'Respuestas a las preguntas mas comunes', href: '/preguntas', icon: SquaresPlusIcon },
+  { name: 'COLABORAR CON UNA ONG', description: 'Colabora con una ONG', href: '/colaborar', icon: CursorArrowRaysIcon },
+  { name: 'TIPOS DE VOLUNTARIADO', description: 'Qué tipos de voluntariado tenemos?', href: '/tipos', icon: FingerPrintIcon },
+  { name: 'PREGUNTAS FRECUENTES', description: 'Respuestas a las preguntas más comunes', href: '/preguntas', icon: SquaresPlusIcon },
+];
 
-]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+];
 
 export default function NavBar() {
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex items-center justify-between p-6 lg:px-8 border-b-2 mb-10">
         <div className="flex lg:flex-1">
-          <img src='/img/Vector.svg'></img>
-          <Link to={"/"} className="-m-1.5 p-1.5">
+          <img src='/img/Vector.svg' alt="Logo" />
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Voluntariado</span>
-            <img
-              alt=""
-              src="/img/voluntariado.png"
-              className="h-8 w-auto"
-            />
+            <img alt="Voluntariado" src="/img/voluntariado.png" className="h-8 w-auto" />
           </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -64,6 +56,7 @@ export default function NavBar() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
+
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-base font-semibold leading-6 text-gray-900">
@@ -109,36 +102,33 @@ export default function NavBar() {
             </PopoverPanel>
           </Popover>
 
-          <Link href="#" className="text-base font-semibold leading-6 text-gray-900 ">
+   
+          <Link to="/colabora" className="text-sm font-semibold leading-6 text-gray-900">
             Colabora con Una ONG
-          <Link to={'/colabora'} className="text-sm font-semibold leading-6 text-gray-900">
-            Colavora con Una ONG
           </Link>
-          <Link href="#" className="text-base font-semibold leading-6 text-gray-900">
-          <Link to={'/eventos'} className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/eventos" className="text-sm font-semibold leading-6 text-gray-900">
             Eventos
           </Link>
-          <Link href="#" className="text-base font-semibold leading-6 text-gray-900">
+          <Link to="/contacta" className="text-sm font-semibold leading-6 text-gray-900">
             Contacta
-          <Link to={'/formate'} className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link to="/formate" className="text-sm font-semibold leading-6 text-gray-900">
             Formate
           </Link>
-
-          <Link to={"/foro"} className="text-base font-semibold leading-6 text-gray-900">
+          <Link to="/foro" className="text-sm font-semibold leading-6 text-gray-900">
             Comparte en el foro
           </Link>
-          <Link to={"/recursos"} className="text-base font-semibold leading-6 text-gray-900">
+          <Link to="/recursos" className="text-sm font-semibold leading-6 text-gray-900">
             Recursos
-
           </Link>
         </PopoverGroup>
+
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to={"/login"} className="text-base font-semibold leading-6 text-gray-900">
+          <Link to="/login" className="text-base font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>
-
     </header>
-  )
+  );
 }
