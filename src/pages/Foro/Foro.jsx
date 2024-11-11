@@ -54,7 +54,7 @@ function Foro() {
                                 <tr key={index} className="border-b border-gray-200">
                                     <td className="py-4">
                                         <h3 className="text-pink-600 font-semibold text-2xl">
-                                            <Link to={category.link}>{category.title}</Link>
+                                            <Link to={`/foro/${category.id}`}>{category.title}</Link>
                                         </h3>
                                         <p className="text-gray-500 text-2xl">{category.description}</p>
                                     </td>

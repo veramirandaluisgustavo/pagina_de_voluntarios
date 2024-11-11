@@ -18,7 +18,7 @@ const Login = () => {
     // Aquí iría la lógica de autenticación
     console.log('Form submitted:', formData);
     const {email,password,rememberMe} = formData
-    if(rememberMe){
+    
         const docRef = collection(db,'ongs')
     const q=query(docRef,where("email","==",email),where('password','==',password))
     getDocs(q)
@@ -33,11 +33,11 @@ const Login = () => {
             console.log("no se encontro la ong")
         }
     })
-    }
-    else{
-        const docRef = collection(db,'usuarios')
-    const q=query(docRef,where("email","==",email),where('password','==',password))
-    getDocs(q)
+    
+   
+        const docRef2 = collection(db,'usuarios')
+    const q2=query(docRef2,where("email","==",email),where('password','==',password))
+    getDocs(q2)
     .then((resp)=>{
         if(resp.docs.length>0){
             const user  = JSON.stringify({...resp.docs[0].data(),id:resp.docs[0].id,type:'person'})
@@ -49,7 +49,7 @@ const Login = () => {
             console.log("no se encontro la persona")
         }
     })
-    }
+    
     
   };
 
@@ -119,19 +119,7 @@ const Login = () => {
 
           {/* Remember me and Forgot password */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="rememberMe"
-                type="checkbox"
-                checked={formData.rememberMe}
-                onChange={handleChange}
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                Es una ONG
-              </label>
-            </div>
+            
 
             <div className="text-sm">
               <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">

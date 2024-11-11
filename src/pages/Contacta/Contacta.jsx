@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { collection,addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import { useAuth } from '../../utils/AuthContext';
+import AccessDenied from '../../components/AccsessDenied';
 const Contacta = () => {
   const [formData, setFormData] = useState({
     title: '',
@@ -15,7 +16,8 @@ const Contacta = () => {
   const [newCategory, setNewCategory] = useState('');
   const [newTag, setNewTag] = useState('');
   const {user} = useAuth();
-
+if(!user){
+    return <AccessDenied></AccessDenied>}
   // Sample locations - esto podría venir de una API o props
   const locations = ['New York', 'London', 'Tokyo', 'Paris', 'Berlin'];
 
