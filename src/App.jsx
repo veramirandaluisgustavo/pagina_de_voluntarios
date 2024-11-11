@@ -16,6 +16,7 @@ import Formate from './pages/Formate/Formate'
 import Colabora from './pages/Colabora/colabora'
 import Formate2 from './pages/Formate/Formate2'
 import Contacta from './pages/Contacta/Contacta'
+import ChatForo from './pages/Foro/components/ChatForo'
 function App() {
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/colabora' element={<Colabora></Colabora>}></Route>
           <Route path='/formate' element={<Formate2></Formate2>}></Route>
           <Route path='/contacta' element={<Contacta></Contacta>}></Route>
+          <Route path='/foro/:id' element={<ChatForo></ChatForo>}></Route>
 
           
           <Route path='/recursos' element={<Recursos></Recursos>}></Route>
