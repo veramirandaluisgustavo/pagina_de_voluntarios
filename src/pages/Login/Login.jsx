@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { collection,getDocs,query,where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import { json } from 'react-router-dom';
 import { useAuth } from '../../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const Login = () => {
-    const {login} = useAuth()
-    const navigate = useNavigate();
+  const { login } = useAuth()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -17,40 +18,40 @@ const Login = () => {
     e.preventDefault();
     // Aquí iría la lógica de autenticación
     console.log('Form submitted:', formData);
-    const {email,password,rememberMe} = formData
-    
-        const docRef = collection(db,'ongs')
-    const q=query(docRef,where("email","==",email),where('password','==',password))
+    const { email, password, rememberMe } = formData
+
+    const docRef = collection(db, 'ongs')
+    const q = query(docRef, where("email", "==", email), where('password', '==', password))
     getDocs(q)
-    .then((resp)=>{
-        if(resp.docs.length>0){
-            const user = JSON.stringify({...resp.docs[0].data(),id:resp.docs[0].id,type:'ong'})
-            sessionStorage.setItem('user',user)
-            login({...resp.docs[0].data(),id:resp.docs[0].id,type:'ong'})
-            navigate('/')
+      .then((resp) => {
+        if (resp.docs.length > 0) {
+          const user = JSON.stringify({ ...resp.docs[0].data(), id: resp.docs[0].id, type: 'ong' })
+          sessionStorage.setItem('user', user)
+          login({ ...resp.docs[0].data(), id: resp.docs[0].id, type: 'ong' })
+          navigate('/')
         }
-        else{
-            console.log("no se encontro la ong")
+        else {
+          console.log("no se encontro la ong")
         }
-    })
-    
-   
-        const docRef2 = collection(db,'usuarios')
-    const q2=query(docRef2,where("email","==",email),where('password','==',password))
+      })
+
+
+    const docRef2 = collection(db, 'usuarios')
+    const q2 = query(docRef2, where("email", "==", email), where('password', '==', password))
     getDocs(q2)
-    .then((resp)=>{
-        if(resp.docs.length>0){
-            const user  = JSON.stringify({...resp.docs[0].data(),id:resp.docs[0].id,type:'person'})
-            sessionStorage.setItem('user',user)
-            login({...resp.docs[0].data(),id:resp.docs[0].id,type:'person'})
-            navigate('/')
+      .then((resp) => {
+        if (resp.docs.length > 0) {
+          const user = JSON.stringify({ ...resp.docs[0].data(), id: resp.docs[0].id, type: 'person' })
+          sessionStorage.setItem('user', user)
+          login({ ...resp.docs[0].data(), id: resp.docs[0].id, type: 'person' })
+          navigate('/')
         }
-        else{
-            console.log("no se encontro la persona")
+        else {
+          console.log("no se encontro la persona")
         }
-    })
-    
-    
+      })
+
+
   };
 
   const handleChange = (e) => {
@@ -70,12 +71,12 @@ const Login = () => {
         backgroundPosition: 'center',
       }}
     >
-     
-    <div className='w-1/3'>
 
-    </div>
-  
-    
+      <div className='w-1/3'>
+
+      </div>
+
+
       <div className="w-1/3 flex items-center justify-center bg-white bg-opacity-85 px-8 py-12">
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
@@ -85,11 +86,11 @@ const Login = () => {
             <p className="mt-2 text-sm text-gray-600">
               O{' '}
               <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                regístrate si aún no tienes una cuenta
+                <Link to="/registroU">Regístrate si aún no tienes una cuenta</Link>
               </a>
             </p>
           </div>
-  
+
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md shadow-sm space-y-4">
               {/* Email Field */}
@@ -109,7 +110,7 @@ const Login = () => {
                   placeholder="tucorreo@ejemplo.com"
                 />
               </div>
-  
+
               {/* Password Field */}
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">
@@ -128,7 +129,7 @@ const Login = () => {
                 />
               </div>
             </div>
-  
+
             {/* Forgot Password */}
             <div className="flex items-center justify-between">
               <div className="text-sm">
@@ -137,7 +138,7 @@ const Login = () => {
                 </a>
               </div>
             </div>
-  
+
             {/* Submit Button */}
             <div>
               <button
@@ -152,7 +153,7 @@ const Login = () => {
       </div>
     </div>
   );
-  
+
 };
 
 export default Login;
