@@ -31,11 +31,13 @@ const products = [
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
+
 ];
 
 export default function NavBar() {
-  const {user,logout} = useAuth()
+  const { user, logout } = useAuth()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
 
   return (
     <header className="bg-white">
@@ -104,15 +106,15 @@ export default function NavBar() {
             </PopoverPanel>
           </Popover>
 
-   
+
           <Link to="/colabora" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Colabora con Una ONG
           </Link>
-          
-          {user? (user.type=='ong'?<Link to="/contacta" className="text-sm font-semibold leading-6 text-gray-900">
+
+          {user ? (user.type == 'ong' ? <Link to="/contacta" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Contacta
-          </Link>:<></>):<></>}
-          
+          </Link> : <></>) : <></>}
+
           <Link to="/formate" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Formate
           </Link>
@@ -125,10 +127,37 @@ export default function NavBar() {
         </PopoverGroup>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        {user?<><p className='mr-[10px]'>hola,{user.nombre}</p><button onClick={logout} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'>Salir</button></>:<Link to="/login" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>}
+          {user ? (
+            <>
+
+              <p className="mr-4 text-lg font-semibold text-gray-900 mt-2">
+                {user.nombre}
+              </p>
+
+
+              <div className="flex items-center mr-[10px]">
+                <div
+                  className="w-12 h-12 bg-purple-800 text-white flex items-center justify-center rounded-full font-bold cursor-pointer"
+                  onClick={() => setShowLogout(!showLogout)}
+                >
+                  {user.nombre.split(' ').map((word) => word[0].toUpperCase()).slice(0, 2).join('')}
+                </div>
+              </div>
+
+
+              {showLogout && (
+                <button onClick={logout} className='bg-purple-800 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded-full'>
+                  Salir
+                </button>
+              )}
+            </>
+          ) : (
+            <Link to="/login" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+              Log in <span aria-hidden="true">&rarr;</span>
+            </Link>
+          )}
         </div>
+
       </nav>
     </header>
   );
