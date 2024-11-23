@@ -29,8 +29,8 @@ const products = [
 ];
 
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  //{ name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  //{ name: 'Contact sales', href: '#', icon: PhoneIcon },
 
 ];
 
@@ -111,9 +111,9 @@ export default function NavBar() {
             Colabora con Una ONG
           </Link>
 
-          {user ? (user.type == 'ong' ? <Link to="/contacta" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
+          {user && user.type == "ong" ? <Link to="/contacta" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Contacta
-          </Link> : <></>) : <></>}
+          </Link> : <></>}
 
           <Link to="/formate" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
             Formate
