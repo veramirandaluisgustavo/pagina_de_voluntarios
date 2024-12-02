@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Pasos() {
     return (<>
         <div className="min-h-screen flex flex-col">
@@ -41,12 +43,14 @@ function Pasos() {
                         <p className="mt-2 text-xl ">
                             Esto es lo que quieres entender y resolver.
                         </p>
+                        <Link to={"/tiposDeVoluntariado"}>
                         <button
                             className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700"
-                            onClick={() => window.location.href = '/tipos'}
+                            
                         >
                             Descubre diferentes tipos de voluntariado
                         </button>
+                        </Link>
 
                     </div>
                     <img
@@ -74,10 +78,12 @@ function Pasos() {
                             ¡Millones de cosas!
                             Toda depende de tu disponibilidad, tus capacidades y tus intereses.
                         </p>
+                        <Link to={"/foro"}>
                         <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700">
                             
                             Descubre que hacen los otros voluntarios
                         </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -95,11 +101,13 @@ function Pasos() {
                         <p className="mt-2 text-xl">
                             Hay muchísimas organizaciones que necesitan voluntarios/as com tú, sólo tienes que encontrar la que te enamore.
                         </p>
+                        <Link to={"/colabora"}>
                         <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700" 
-                         onClick={() => window.location.href = '/colabora'}
+                        
                         >
                             Encuntra y contacta con una ONG
                         </button>
+                        </Link>
                     </div>
                     <img
                         src="/images/contacta.png"
@@ -124,11 +132,13 @@ function Pasos() {
 
                             Comprométete, entusiásmate, trabaja en el proyecto que has escogido y disfruta de la experiencia.
                         </p>
+                        <Link to={"/foro"}>
                         <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700"
-                        onClick={() => window.location.href = '/foro'}
+                        
                         >
                             Comparte tu experiencia
                         </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -147,11 +157,13 @@ function Pasos() {
 
                             Quizás el proyecto que has escogido necesita habilidades o conocimientos específicos. Fórmate para realizar mejor tu voluntariado.
                         </p>
+                        <Link to={"/formate"}>
                         <button className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700"
-                         onClick={() => window.location.href = '/formate'}
+                         
                         >
                             Descubre cursos de ayuda
                         </button>
+                        </Link>
                     </div>
                     <img
                         src="/images/formate.png"

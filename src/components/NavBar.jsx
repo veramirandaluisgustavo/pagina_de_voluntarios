@@ -152,9 +152,16 @@ export default function NavBar() {
               )}
             </>
           ) : (
+          
+            <div>
+              <Link to="/registroU" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out mr-3">
+              Register
+            </Link>
+            
             <Link to="/login" className="text-lg font-semibold leading-6 text-gray-900 hover:text-purple-700 hover:underline hover:underline-offset-4 transition-colors duration-300 ease-in-out">
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>
+              </div>
           )}
         </div>
 

@@ -11,7 +11,9 @@ const EventCard = ({
     <div className="bg-white rounded-lg shadow-2xl p-6 hover:shadow-md transition-all">
       {/* Image */}
       {image && (
+        <a href={"https://www.worldpackers.com/es"} className="block w-full h-48 object-cover rounded-t-lg mb-4">
         <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg mb-4" />
+        </a>
       )}
 
       {/* Title */}
@@ -24,9 +26,7 @@ const EventCard = ({
         {description}
       </p>
    
-      <a href='#' className="text-pink-600 text-sm font-medium hover:underline">
-          leer más
-        </a>
+      
     </div>
   );
 };
