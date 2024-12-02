@@ -18,6 +18,8 @@ import Formate2 from './pages/Formate/Formate2'
 import Contacta from './pages/Contacta/Contacta'
 import ChatForo from './pages/Foro/components/ChatForo'
 import RegistroU from './pages/Registro/RegistroU'
+import Registro from './pages/register/Registro'
+import TiposDeVoluntariado from './pages/pasosVoluntariado/TiposDeVoluntariado'
 function App() {
 
 
@@ -33,12 +35,12 @@ function App() {
           <Route path='/formate' element={<Formate2></Formate2>}></Route>
           <Route path='/contacta' element={<Contacta></Contacta>}></Route>
           <Route path='/foro/:id' element={<ChatForo></ChatForo>}></Route>
-         
+         <Route path='/tiposDeVoluntariado' element={<TiposDeVoluntariado></TiposDeVoluntariado>}></Route>
           
           <Route path='/recursos' element={<Recursos></Recursos>}></Route>
           <Route path='/tipos' element={<Tipos></Tipos>}></Route>
           <Route path='/preguntas' element={<Preguntas></Preguntas>}></Route>
-          <Route path='/registroU' element={<RegistroU></RegistroU>}></Route>
+          <Route path='/registroU' element={<Registro></Registro>}></Route>
           <Route path='/*' element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
       <Footer></Footer>

@@ -5,11 +5,13 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './utils/AuthContext.jsx'
 createRoot(document.getElementById('root')).render(
+  <AuthProvider>
   <BrowserRouter>
   <StrictMode>
-    <AuthProvider>
+    
     <App />
-    </AuthProvider>
+    
   </StrictMode>
   </BrowserRouter>
+  </AuthProvider>
 )

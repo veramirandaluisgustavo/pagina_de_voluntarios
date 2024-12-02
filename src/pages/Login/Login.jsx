@@ -5,6 +5,7 @@ import { json } from 'react-router-dom';
 import { useAuth } from '../../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Toaster, toast } from 'react-hot-toast';
 const Login = () => {
   const { login } = useAuth()
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const Login = () => {
           navigate('/')
         }
         else {
-          console.log("no se encontro la persona")
+          toast.error("Usuario o Contraseña incorrectos")
         }
       })
 
@@ -84,10 +85,9 @@ const Login = () => {
               Inicio De Sesión
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              O{' '}
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+              
                 <Link to="/registroU">Regístrate si aún no tienes una cuenta</Link>
-              </a>
+              
             </p>
           </div>
 
@@ -151,6 +151,10 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <Toaster
+  position="bottom-right"
+  reverseOrder={false}
+/>
     </div>
   );
 
