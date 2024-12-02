@@ -30,7 +30,7 @@ const ModalFormForo = ({ isOpen, onClose, onSubmit }) => {
       <div className="bg-white rounded-lg shadow-lg p-6 w-1/3">
         {/* Título del Modal */}
         <div className="flex justify-between items-center border-b pb-3">
-          <h2 className="text-lg font-medium">Formulario</h2>
+          <h2 className="text-lg font-medium">Crear nuevo foro</h2>
           <button
             onClick={onClose}
             className="text-gray-500 hover:text-gray-800"
