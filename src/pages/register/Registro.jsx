@@ -64,14 +64,14 @@ function Registro() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[url(/images/fondo.jpg)] bg-cover">
       <div className="max-w-2xl w-full bg-white shadow-md rounded-lg p-6 bg-opacity-85">
-        <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">
+        <h1 className="text-4xl font-bold mb-6 text-center text-black-600">
           Registro
         </h1>
         <div className="flex justify-center mb-6">
           <button
             className={`px-4 py-2 rounded-l-md ${
               tipoRegistro === "usuario"
-                ? "bg-blue-500 text-white"
+                ? "bg-purple-800 text-white"
                 : "bg-gray-200 text-gray-600"
             }`}
             onClick={() => setTipoRegistro("usuario")}
@@ -81,7 +81,7 @@ function Registro() {
           <button
             className={`px-4 py-2 rounded-r-md ${
               tipoRegistro === "ong"
-                ? "bg-blue-500 text-white"
+                ? "bg-purple-800 text-white"
                 : "bg-gray-200 text-gray-600"
             }`}
             onClick={() => setTipoRegistro("ong")}
@@ -206,7 +206,7 @@ function Registro() {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+            className="w-full bg-purple-800 text-white py-2 rounded-md hover:bg-indigo-700"
           >
             Registrar {tipoRegistro === "usuario" ? "Usuario" : "ONG"}
           </button>
