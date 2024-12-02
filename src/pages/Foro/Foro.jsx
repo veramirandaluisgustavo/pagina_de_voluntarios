@@ -1,10 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { collection,getDocs } from 'firebase/firestore';
+import { collection,getDocs,addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { useAuth } from '../../utils/AuthContext';
+import ModalFormForo from './components/ModalFormForo';
 function Foro() {
     const [categories,setCategories] = useState([])
+    const {user} = useAuth()
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
+  const handleFormSubmit = (formData) => {
+    console.log("Datos recibidos del modal:", formData);
+    const dataSend = {
+        ...formData
+    };
+    const dataRef = collection(db, "foros");
+    addDoc(dataRef, dataSend)
+      .then(() => {
+        console.log("Foro creado correctamente");
+        setCategories([...categories, dataSend]);
+        handleCloseModal();
+        const dataRef=collection(db,'foros')
+        getDocs(dataRef)
+        .then((resp)=>{
+            setCategories(
+                resp.docs.map((item)=>{
+                    return {...item.data(),id:item.id}
+                })
+            )
+        })
+      })
+      .catch((error) => {
+        console.error("Error al crear el foro:", error);
+        });
+
+  };
     useEffect(()=>{
         const dataRef=collection(db,'foros')
         getDocs(dataRef)
@@ -26,16 +59,32 @@ function Foro() {
                         ¡Contagia tu entusiasmo en el foro! La gran comunidad del voluntariado te está esperando.
                     </p>
                     <div className="flex justify-center gap-4">
-                        <Link to="/login"> 
-                            <button className="text-pink-500 font-medium flex items-center text-xl">
-                                <span className="mr-2">👤</span>Registrarse
-                            </button>
-                        </Link>
-                        <Link to="/login"> 
+                        
+                        {user?<></>:<Link to="/login"> 
                             <button className="text-pink-500 font-medium flex items-center text-xl">
                                 <span className="mr-2">🔐</span>Iniciar sesión
                             </button>
-                        </Link>
+                        </Link>}
+                        
+                    </div>
+                    <div className="flex justify-center gap-4">
+                        
+                        {user && user.type == "ong"?
+                        <><button
+                        onClick={handleOpenModal}
+                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                      >
+                        Agregar Foro
+                      </button>
+                
+                      {/* Renderiza el modal */}
+                      <ModalFormForo
+                        isOpen={isModalOpen}
+                        onClose={handleCloseModal}
+                        onSubmit={handleFormSubmit}
+                      /></>
+                        :<></>}
+                        
                     </div>
                 </div>
 
@@ -44,9 +93,8 @@ function Foro() {
                         <thead>
                             <tr className="text-gray-600 font-bold border-b">
                                 <th className="py-3 text-left text-2xl">Foro</th>
-                                <th className="py-3 text-center text-2xl">Debates</th>
-                                <th className="py-3 text-center text-2xl">Entradas</th>
-                                <th className="py-3 text-center text-2xl">Última publicación</th>
+                                
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -58,12 +106,8 @@ function Foro() {
                                         </h3>
                                         <p className="text-gray-500 text-2xl">{category.description}</p>
                                     </td>
-                                    <td className="py-4 text-center px-6 text-1xl min-w-[100px]">{category.debates}</td>
-                                    <td className="py-4 text-center px-6 text-1xl min-w-[100px]">{category.entries}</td>
-                                    <td className="py-4 text-center px-6 text-1xl min-w-[150px]">
-                                        <p className="text-base">{category.lastPost}</p>
-                                        <p className="text-pink-500 text-base">{category.lastUser}</p>
-                                    </td>
+      
+                                    
                                 </tr>
                             ))}
                         </tbody>
